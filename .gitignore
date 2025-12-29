@@ -12,3 +12,4 @@ next-env.d.ts
 # build
 /application_build
 dist
+app

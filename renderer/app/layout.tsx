@@ -31,13 +31,7 @@ export default function RootLayout({
           'bg-background min-h-screen font-sans antialiased',
           fontSans.variable
         )}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )

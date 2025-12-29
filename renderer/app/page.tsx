@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function IndexPage() {
   return (
-    <main className="flex flex-col items-center gap-2 pt-10">
+    <main className="dev flex flex-col items-center gap-2 pt-10 decoration-violet-50">
       <Image
         priority
         src="/images/logo.png"
