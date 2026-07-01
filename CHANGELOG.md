@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/quangtrong1506/pubg-overlay/compare/v1.0.0...v1.0.1) (2026-07-01)
+
+
+### Bug Fixes
+
+* update build command for Electron to use npm run build ([447d289](https://github.com/quangtrong1506/pubg-overlay/commit/447d289de96f76266c6ac19342c77ed1d572beef))
+
 # 1.0.0 (2026-07-01)
 
 
