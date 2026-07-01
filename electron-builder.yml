@@ -25,6 +25,7 @@ publish:
   provider: github
   owner: quangtrong1506
   repo: pubg-overlay
+  releaseType: release
 linux:
   target:
     - deb
