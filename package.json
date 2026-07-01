@@ -1,6 +1,7 @@
 {
-  "name": "nextjs-electron-base",
-  "description": "Next 14 (App Router) + Electron + TypeScript + TailwindCSS",
+  "name": "Wwbu",
+  "productName": "Wwbu",
+  "description": "Wwbu - Làm cho vui thôi",
   "version": "0.0.1",
   "author": "Quang Trọng <quangtrong1506@gmail.com>",
   "license": "MIT",

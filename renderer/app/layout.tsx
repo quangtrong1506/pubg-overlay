@@ -1,10 +1,10 @@
-import React from 'react'
 import '@/styles/globals.css'
 import { Inter as FontSans } from 'next/font/google'
+import React from 'react'
 
+import ThemeProvider from '@/components/providers/theme-provider'
 import { cn } from '@/lib/utils'
 import { Metadata } from 'next'
-import ThemeProvider from '@/components/providers/theme-provider'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -12,9 +12,8 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: 'Nextron Boilerplate',
-  description:
-    'Nextron ( Next.Js + Electron ) project boilerplate in TypeScript, with TailwindCSS + Shadcn/ui, web and desktop crossbuild'
+  title: 'Trọng Sa Đoạ - Overlay',
+  description: 'Làm cho vui thôi'
 }
 
 export default function RootLayout({

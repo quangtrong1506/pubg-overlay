@@ -22,7 +22,8 @@
       { "argsIgnorePattern": "^_" }
     ],
     "tailwindcss/classnames-order": "warn",
-    "tailwindcss/no-custom-classname": "off"
+    "tailwindcss/no-custom-classname": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "settings": {
     "next": {
