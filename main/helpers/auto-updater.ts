@@ -16,7 +16,7 @@ export function setupAutoUpdater(
     repo: 'pubg-overlay'
   })
 
-  autoUpdater.on('error', (error) => {
+  autoUpdater.on('error', error => {
     log.error('Auto updater error:', error)
   })
 
@@ -24,15 +24,15 @@ export function setupAutoUpdater(
     log.info('Checking for update...')
   })
 
-  autoUpdater.on('update-available', (info) => {
+  autoUpdater.on('update-available', info => {
     log.info('Update available:', info)
   })
 
-  autoUpdater.on('update-not-available', (info) => {
+  autoUpdater.on('update-not-available', info => {
     log.info('Update not available:', info)
   })
 
-  autoUpdater.on('update-downloaded', (info) => {
+  autoUpdater.on('update-downloaded', info => {
     log.info('Update downloaded:', info)
     dialog
       .showMessageBox(mainWindow, {
@@ -41,7 +41,7 @@ export function setupAutoUpdater(
         message: 'Đã có phiên bản mới, khởi động lại để cập nhật?',
         buttons: ['Khởi động lại ngay', 'Sau']
       })
-      .then((result) => {
+      .then(result => {
         if (result.response === 0) {
           autoUpdater.quitAndInstall()
         }

@@ -1,13 +1,13 @@
 branches:
   - main
 plugins:
-  - "@semantic-release/commit-analyzer"
-  - "@semantic-release/release-notes-generator"
-  - "@semantic-release/changelog"
-  - - plugin: "@semantic-release/git"
+  - '@semantic-release/commit-analyzer'
+  - '@semantic-release/release-notes-generator'
+  - '@semantic-release/changelog'
+  - - plugin: '@semantic-release/git'
     - assets:
         - package.json
         - CHANGELOG.md
-  - - plugin: "@semantic-release/exec"
+  - - plugin: '@semantic-release/exec'
     - successCmd: npx nextron build --win -- -p always
-  - "@semantic-release/github"
+  - '@semantic-release/github'

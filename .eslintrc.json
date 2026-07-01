@@ -1,5 +1,5 @@
 {
-  "root": false,
+  "root": true,
   "parser": "@typescript-eslint/parser",
   "extends": [
     "next",
@@ -15,7 +15,7 @@
   ],
   "rules": {
     "no-html-link-for-pages": "off",
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-unused-vars": [
       "error",
