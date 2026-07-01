@@ -31,15 +31,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Next Build
+      - name: Build Next.js
         run: npm run next:build
 
-  build:
+  release:
     needs: lint-test
 
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     runs-on: windows-latest
+
+    outputs:
+      released: ${{ steps.semantic.outputs.new_release_published }}
 
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -59,6 +62,38 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Release
-        if: github.ref == 'refs/heads/main'
-        run: npx semantic-release
+      - name: Run Semantic Release
+        id: semantic
+        uses: cycjimmy/semantic-release-action@v4
+        with:
+          semantic_version: 24
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  build-electron:
+    needs: release
+
+    if: needs.release.outputs.released == 'true'
+
+    runs-on: windows-latest
+
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Electron
+        run: npm run build:electron
