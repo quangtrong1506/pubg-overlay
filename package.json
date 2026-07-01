@@ -9,7 +9,7 @@
   "homepage": "...git+",
   "repository": {
     "type": "git",
-    "url": "...git+"
+    "url": "https://github.com/quangtrong1506/pubg-overlay.git"
   },
   "keywords": [
     "electron",
@@ -95,6 +95,11 @@
     "@tiptap/extension-text-style": "^3.4.2",
     "@tiptap/extension-bubble-menu": "^3.6.5",
     "@tiptap/extension-character-count": "^3.4.2",
-    "@tiptap/extension-youtube": "^3.4.2"
+    "@tiptap/extension-youtube": "^3.4.2",
+    "semantic-release": "^22.0.0",
+    "@semantic-release/git": "^10.0.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/github": "^9.0.0",
+    "@semantic-release/exec": "^6.0.0"
   }
 }

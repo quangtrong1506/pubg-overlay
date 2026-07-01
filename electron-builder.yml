@@ -21,7 +21,10 @@ files:
     filter:
       - package.json
       - app
-publish: null
+publish:
+  provider: github
+  owner: quangtrong1506
+  repo: pubg-overlay
 linux:
   target:
     - deb
