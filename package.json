@@ -6,7 +6,7 @@
   "author": "Quang Trọng <quangtrong1506@gmail.com>",
   "license": "MIT",
   "main": "app/background.js",
-  "homepage": "...git+",
+  "homepage": "https://github.com/quangtrong1506/pubg-overlay",
   "repository": {
     "type": "git",
     "url": "https://github.com/quangtrong1506/pubg-overlay.git"
