@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/quangtrong1506/pubg-overlay/compare/v1.0.1...v1.0.2) (2026-07-01)
+
+
+### Bug Fixes
+
+* add upload release assets step to CI workflow and remove unused React import ([189dbfb](https://github.com/quangtrong1506/pubg-overlay/commit/189dbfb1159ba8b10a03849756785899f1f0f23f))
+
 ## [1.0.1](https://github.com/quangtrong1506/pubg-overlay/compare/v1.0.0...v1.0.1) (2026-07-01)
 
 
