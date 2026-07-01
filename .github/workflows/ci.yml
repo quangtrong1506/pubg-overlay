@@ -97,3 +97,14 @@ jobs:
 
       - name: Build Electron
         run: npm run build
+
+      - name: Upload Release Assets
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: |
+            dist/*.exe
+            dist/*.blockmap
+            dist/*.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

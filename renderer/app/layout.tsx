@@ -1,6 +1,5 @@
 import '@/styles/globals.css'
 import { Inter as FontSans } from 'next/font/google'
-import React from 'react'
 
 import ThemeProvider from '@/components/providers/theme-provider'
 import { cn } from '@/lib/utils'
