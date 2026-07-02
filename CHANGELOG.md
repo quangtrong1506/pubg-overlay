@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/quangtrong1506/pubg-overlay/compare/v1.0.1...v1.0.2) (2026-07-02)
+
+
+### Bug Fixes
+
+* update autoUpdater feed URL structure and increment version to 1.0.2 ([d345e75](https://github.com/quangtrong1506/pubg-overlay/commit/d345e752618abb7b412221bc4a1ebd8b22cc5dbf))
+
 ## [1.0.1](https://github.com/quangtrong1506/pubg-overlay/compare/v1.0.0...v1.0.1) (2026-07-02)
 
 
