@@ -1,3 +1,14 @@
+## [1.0.2](https://github.com/quangtrong1506/pubg-overlay/compare/v1.0.1...v1.0.2) (2026-07-02)
+
+
+### Bug Fixes
+
+* add upload release assets step to CI workflow and remove unused React import ([189dbfb](https://github.com/quangtrong1506/pubg-overlay/commit/189dbfb1159ba8b10a03849756785899f1f0f23f))
+* update CI workflow to use GITHUB_TOKEN consistently and add latest release tag retrieval ([b5066ea](https://github.com/quangtrong1506/pubg-overlay/commit/b5066ea4b14a22b3eca9da4271ae1dce27c42afa))
+* update environment variable name for GitHub token and clean up release asset upload step ([91da3d8](https://github.com/quangtrong1506/pubg-overlay/commit/91da3d8d84b945018d84a94ddc7c3a902708b296))
+* update release asset upload step to use github.ref_name for tag name ([b63e234](https://github.com/quangtrong1506/pubg-overlay/commit/b63e234265835ebf52f1b98b2bf65687780f516e))
+* update tag_name for upload release assets step to use latest release tag output ([b38afae](https://github.com/quangtrong1506/pubg-overlay/commit/b38afae6d322d5b8edbf8a88fb97183e472d3c83))
+
 ## [1.0.2](https://github.com/quangtrong1506/pubg-overlay/compare/v1.0.1...v1.0.2) (2026-07-01)
 
 
