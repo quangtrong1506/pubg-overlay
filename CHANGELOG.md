@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/quangtrong1506/pubg-overlay/compare/v1.0.0...v1.1.0) (2026-07-02)
+
+
+### Features
+
+* add step to upload release assets in CI workflow ([ea199f6](https://github.com/quangtrong1506/pubg-overlay/commit/ea199f6d071a5edf3d72c61dea82603de5bc6d9d))
+
 # 1.0.0 (2026-07-02)
 
 
