@@ -103,7 +103,7 @@ jobs:
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ steps.latest.outputs.tag }}
+          tag_name: ${{ steps.latest.outputs.tag }}
           files: |
             dist/*.exe
             dist/*.blockmap
