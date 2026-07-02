@@ -1,9 +1,11 @@
 appId: com.trongsadoa.wwbu.ovelay
 productName: Wwbu
 copyright: Copyright © 2024 TrongSaDoa
+
 directories:
   output: dist
   buildResources: resources
+
 extraResources:
   - from: resources/icon.ico
     to: icon.ico
@@ -11,21 +13,25 @@ extraResources:
     to: icon.icns
 
 artifactName: 'Wwbu.${version}.setup.${ext}'
-nsis:
-  createDesktopShortcut: true
-  createStartMenuShortcut: true
-  oneClick: true
-  runAfterFinish: true
+
 files:
   - from: .
     filter:
       - package.json
       - app
+
+nsis:
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  oneClick: true
+  runAfterFinish: true
+
 publish:
   provider: github
   owner: quangtrong1506
   repo: pubg-overlay
   releaseType: release
+
 linux:
   target:
     - deb
