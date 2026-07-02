@@ -8,7 +8,9 @@ export function setupAutoUpdater(
   if (!app.isPackaged) return
 
   autoUpdater.setFeedURL({
-    url: 'https://github.com/quangtrong1506/pubg-overlay/releases/latest'
+    provider: 'github',
+    owner: 'quangtrong1506',
+    repo: 'pubg-overlay'
   })
 
   autoUpdater.on('error', error => {
