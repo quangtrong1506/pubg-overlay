@@ -78,6 +78,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          fetch-tags: true
 
       - uses: actions/setup-node@v4
         with:
@@ -89,10 +90,20 @@ jobs:
       - name: Build Electron
         run: npm run build
 
+      - name: Get latest tag
+        id: latest
+        shell: bash
+        run: |
+          TAG=$(git tag --sort=-version:refname | head -n 1)
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Show
+        run: echo "${{ steps.latest.outputs.tag }}"
+
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ needs.release.outputs.new_release_version }}
+          tag_name: v${{ steps.latest.outputs.tag }}
           files: |
             dist/*.exe
             dist/*.blockmap
