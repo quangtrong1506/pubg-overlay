@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/quangtrong1506/pubg-overlay/compare/v1.1.1...v1.1.2) (2026-07-02)
+
+
+### Bug Fixes
+
+* update tag_name for upload release assets step to use new_release_version output ([49327d9](https://github.com/quangtrong1506/pubg-overlay/commit/49327d93ebaa2dd41c850c4a5c1a81e962373d0a))
+
 ## [1.1.1](https://github.com/quangtrong1506/pubg-overlay/compare/v1.1.0...v1.1.1) (2026-07-02)
 
 
