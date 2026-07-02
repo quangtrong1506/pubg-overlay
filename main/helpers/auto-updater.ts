@@ -7,13 +7,8 @@ export function setupAutoUpdater(
 ): void {
   if (!app.isPackaged) return
 
-  const server = 'https://github.com'
-  const url = `${server}/quangtrong1506/pubg-overlay/releases/download/v${app.getVersion()}`
-
   autoUpdater.setFeedURL({
-    provider: 'github',
-    owner: 'quangtrong1506',
-    repo: 'pubg-overlay'
+    url: 'https://github.com/quangtrong1506/pubg-overlay/releases/latest'
   })
 
   autoUpdater.on('error', error => {
@@ -24,16 +19,16 @@ export function setupAutoUpdater(
     log.info('Checking for update...')
   })
 
-  autoUpdater.on('update-available', info => {
-    log.info('Update available:', info)
+  autoUpdater.on('update-available', () => {
+    log.info('Update available')
   })
 
-  autoUpdater.on('update-not-available', info => {
-    log.info('Update not available:', info)
+  autoUpdater.on('update-not-available', () => {
+    log.info('Update not available')
   })
 
-  autoUpdater.on('update-downloaded', info => {
-    log.info('Update downloaded:', info)
+  autoUpdater.on('update-downloaded', () => {
+    log.info('Update downloaded')
     dialog
       .showMessageBox(mainWindow, {
         type: 'info',

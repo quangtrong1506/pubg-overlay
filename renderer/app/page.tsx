@@ -1,5 +1,5 @@
-import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function IndexPage() {
   return (
@@ -12,10 +12,20 @@ function IndexPage() {
         height={150}
       />
       <h1 className="text-lg font-semibold">
-        Nextron ( Next.Js + Electron ) Boilerplate
+        Ứng dụng đã được chạy, bạn có thể đóng màn hình này
       </h1>
-      <p>With TypeScript, TailwindCSS and Shadcn/ui</p>
-      <p>Crossbuild for Web or Desktop</p>
+      <p>
+        Ấn
+        <code className="mx-2 bg-black/5 p-1">alt + M</code>
+        để mở overlay
+      </p>
+      <div className="mt-6">
+        <Link
+          className="text-indigo-600 underline"
+          href="https://github.com/quangtrong1506/pubg-overlay">
+          Donate
+        </Link>
+      </div>
     </main>
   )
 }
