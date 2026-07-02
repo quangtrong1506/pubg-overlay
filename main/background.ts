@@ -1,7 +1,6 @@
-import { app, globalShortcut } from 'electron'
+import { app, globalShortcut, ipcMain } from 'electron'
 import serve from 'electron-serve'
 import path from 'path'
-import { log } from './helpers/logger'
 import {
   appShortcutHandler,
   createOverlayWindow,
@@ -9,6 +8,7 @@ import {
   createWindow
 } from './helpers'
 import { setupAutoUpdater } from './helpers/auto-updater'
+import { log } from './helpers/logger'
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -54,7 +54,10 @@ if (isProd) {
   }
 
   const overlayWindow = await createOverlayWindow()
-  overlayWindow.webContents.openDevTools()
+
+  ipcMain.on('overlay-close', () => {
+    overlayWindow.hide()
+  })
 
   log.info('[Main] Main window loaded')
 

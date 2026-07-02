@@ -75,7 +75,14 @@ function updateTrayMenu(mainWindow: BrowserWindow): void {
     { type: 'separator' },
     {
       label: 'Thoát',
-      click: () => mainWindow.destroy()
+      click: () => {
+        const windows: BrowserWindow[] = BrowserWindow.getAllWindows()
+        windows.forEach(window => {
+          window.removeAllListeners('close')
+          window.close()
+        })
+        app.quit()
+      }
     }
   ])
 
