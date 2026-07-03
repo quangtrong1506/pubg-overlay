@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/quangtrong1506/pubg-overlay/compare/v1.1.0...v1.1.1) (2026-07-03)
+
+
+### Bug Fixes
+
+* update NODE_ENV check for production and increment version to 1.1.1 ([adb1992](https://github.com/quangtrong1506/pubg-overlay/commit/adb1992fba001d4a936025d15127a7b788f80dad))
+
 # [1.1.0](https://github.com/quangtrong1506/pubg-overlay/compare/v1.0.2...v1.1.0) (2026-07-03)
 
 
