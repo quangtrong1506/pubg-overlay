@@ -1,51 +1,72 @@
-import { app, autoUpdater, dialog } from 'electron'
+import { dialog } from 'electron'
+import { autoUpdater } from 'electron-updater'
 import { log } from './logger'
 
-export function setupAutoUpdater(
+autoUpdater.setFeedURL({
+  provider: 'github',
+  owner: 'quangtrong1506',
+  repo: 'pubg-overlay',
+  releaseType: 'release',
+  publishAutoUpdate: true,
+  private: false
+})
+// autoUpdater.logger = log;
+function setupAutoUpdater(
   mainWindow: Electron.BrowserWindow,
-  onUpdateReady: () => void
-): void {
-  if (!app.isPackaged) return
-
-  autoUpdater.setFeedURL({
-    provider: 'github',
-    owner: 'quangtrong1506',
-    repo: 'pubg-overlay'
-  })
-
-  autoUpdater.on('error', error => {
-    log.error('Auto updater error:', error)
-  })
+  callbackDownload?: () => void
+) {
+  autoUpdater.autoDownload = true
+  autoUpdater.autoInstallOnAppQuit = true
+  autoUpdater.autoRunAppAfterInstall = true
 
   autoUpdater.on('checking-for-update', () => {
-    log.info('Checking for update...')
+    // console.log('🧐 Đang kiểm tra cập nhật...');
   })
 
-  autoUpdater.on('update-available', () => {
-    log.info('Update available')
+  autoUpdater.on('update-available', info => {
+    log.info('🆕 Có bản cập nhật mới:', info.version)
+    mainWindow.webContents.send('update-available', info.version)
   })
 
-  autoUpdater.on('update-not-available', () => {
-    log.info('Update not available')
+  autoUpdater.on('error', err => {
+    log.error('❌ Lỗi cập nhật:', err)
   })
 
-  autoUpdater.on('update-downloaded', () => {
-    log.info('Update downloaded')
+  autoUpdater.on('update-downloaded', info => {
+    callbackDownload?.()
+    log.info('✅ Đã tải xong cập nhật, sẽ cài đặt khi thoát...')
     dialog
       .showMessageBox(mainWindow, {
         type: 'info',
         title: 'Cập nhật',
-        message: 'Đã có phiên bản mới, khởi động lại để cập nhật?',
-        buttons: ['Khởi động lại ngay', 'Sau']
+        message: 'Đã có phiên bản mới, khởi động lại để cập nhật?'
       })
       .then(result => {
         if (result.response === 0) {
           autoUpdater.quitAndInstall()
         }
       })
+
+    setTimeout(() => {
+      autoUpdater.quitAndInstall()
+    }, 1000)
+  })
+  autoUpdater.on('download-progress', progress => {
+    mainWindow.webContents.send('download-progress', {
+      percent: progress.percent,
+      bytesPerSecond: progress.bytesPerSecond,
+      total: progress.total,
+      transferred: progress.transferred
+    })
   })
 
-  setTimeout(() => {
-    autoUpdater.checkForUpdates()
-  }, 3000)
+  autoUpdater.checkForUpdates()
+  setInterval(
+    () => {
+      autoUpdater.checkForUpdates()
+    },
+    15 * 60 * 1000
+  )
 }
+
+export { setupAutoUpdater }
