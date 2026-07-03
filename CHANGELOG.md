@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/quangtrong1506/pubg-overlay/compare/v1.0.2...v1.1.0) (2026-07-03)
+
+
+### Features
+
+* enhance auto-updater functionality and UI feedback for updates ([7321a6c](https://github.com/quangtrong1506/pubg-overlay/commit/7321a6c5598ee60ccb1cae6693809f80094de668))
+
 ## [1.0.2](https://github.com/quangtrong1506/pubg-overlay/compare/v1.0.1...v1.0.2) (2026-07-02)
 
 
