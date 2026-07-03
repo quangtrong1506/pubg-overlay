@@ -2,7 +2,7 @@ import { BrowserWindow } from 'electron'
 import path from 'path'
 import { log } from './logger'
 
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV !== 'development'
 
 const getOverlayURL = async (): Promise<string> => {
   if (isProd) {

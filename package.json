@@ -2,7 +2,7 @@
   "name": "Wwbu",
   "productName": "Wwbu",
   "description": "Wwbu - Làm cho vui thôi",
-  "version": "1.0.3",
+  "version": "1.1.1",
   "author": "Quang Trọng <quangtrong1506@gmail.com>",
   "license": "MIT",
   "main": "app/background.js",
