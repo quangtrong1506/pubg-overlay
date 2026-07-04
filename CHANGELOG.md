@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/quangtrong1506/pubg-overlay/compare/v1.1.2...v1.1.3) (2026-07-04)
+
+
+### Bug Fixes
+
+* correct overlay URL path and increment version to 1.1.3 ([31a2c3e](https://github.com/quangtrong1506/pubg-overlay/commit/31a2c3e46fb46b248813eaeef1566560bd541e1e))
+
 ## [1.1.2](https://github.com/quangtrong1506/pubg-overlay/compare/v1.1.1...v1.1.2) (2026-07-04)
 
 
