@@ -2,7 +2,7 @@
   "name": "Wwbu",
   "productName": "Wwbu",
   "description": "Wwbu - Làm cho vui thôi",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "author": "Quang Trọng <quangtrong1506@gmail.com>",
   "license": "MIT",
   "main": "app/background.js",
@@ -33,7 +33,7 @@
     "electron:build-win": "nextron build --win",
     "electron:build-linux": "nextron build --linux",
     "electron:build-mac": "nextron build --mac",
-    "build": "npm run packages:build && npm run next:build && npm run electron:build",
+    "build": "npm run packages:build && npm run electron:build",
     "format": "next lint renderer --fix && prettier --write ."
   },
   "dependencies": {
