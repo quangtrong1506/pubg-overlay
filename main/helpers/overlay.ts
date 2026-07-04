@@ -28,7 +28,7 @@ export const createOverlayWindow = async (): Promise<BrowserWindow> => {
     title: 'Overlay Window'
   })
   if (isProd) {
-    await window.loadURL('app://./overlay')
+    await window.loadURL('app://./overlay/')
   } else {
     const port = process.argv[2]
     await window.loadURL(`http://localhost:${port}/overlay`)
