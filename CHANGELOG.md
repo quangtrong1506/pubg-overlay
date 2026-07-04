@@ -1,3 +1,11 @@
+## [1.1.4](https://github.com/quangtrong1506/pubg-overlay/compare/v1.1.3...v1.1.4) (2026-07-04)
+
+
+### Bug Fixes
+
+* update lint command to use npx for consistency ([801b734](https://github.com/quangtrong1506/pubg-overlay/commit/801b73425a0d74d572ef9332642dbb67d1698d41))
+* update version to 1.1.4 and modify build scripts in package.json ([c6575ca](https://github.com/quangtrong1506/pubg-overlay/commit/c6575ca8019b68e316b1cb16c365ee1b13cee1bc))
+
 ## [1.1.3](https://github.com/quangtrong1506/pubg-overlay/compare/v1.1.2...v1.1.3) (2026-07-04)
 
 
