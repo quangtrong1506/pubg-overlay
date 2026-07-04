@@ -28,7 +28,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run lint --workspace=renderer
+      - run: npx next lint renderer
 
   release:
     needs: lint-test
