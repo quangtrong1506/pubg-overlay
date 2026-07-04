@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/quangtrong1506/pubg-overlay/compare/v1.1.1...v1.1.2) (2026-07-04)
+
+
+### Bug Fixes
+
+* update NODE_ENV check for production ([f605ea2](https://github.com/quangtrong1506/pubg-overlay/commit/f605ea22e136fac75872ad721487d0f72fae54a0))
+
 ## [1.1.1](https://github.com/quangtrong1506/pubg-overlay/compare/v1.1.0...v1.1.1) (2026-07-03)
 
 
