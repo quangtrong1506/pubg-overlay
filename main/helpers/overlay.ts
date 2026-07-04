@@ -2,15 +2,7 @@ import { BrowserWindow } from 'electron'
 import path from 'path'
 import { log } from './logger'
 
-const isProd = process.env.NODE_ENV !== 'development'
-
-const getOverlayURL = async (): Promise<string> => {
-  if (isProd) {
-    return 'app://./overlay'
-  }
-  const port = process.argv[2]
-  return `http://localhost:${port}/overlay`
-}
+const isProd = process.env.NODE_ENV === 'production'
 
 export const createOverlayWindow = async (): Promise<BrowserWindow> => {
   log.info('[Overlay] Creating overlay window...')
@@ -32,10 +24,17 @@ export const createOverlayWindow = async (): Promise<BrowserWindow> => {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
       nodeIntegration: false
-    }
+    },
+    title: 'Overlay Window'
   })
-  const url = await getOverlayURL()
-  window.loadURL(url)
+  if (isProd) {
+    await window.loadURL('app://./overlay')
+  } else {
+    const port = process.argv[2]
+    await window.loadURL(`http://localhost:${port}/overlay`)
+    window.webContents.openDevTools()
+  }
+  log.info(process.env.NODE_ENV)
 
   return window
 }
